@@ -4,11 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowMoviesComponent } from './show-movies/show-movies.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowMoviesComponent
+    ShowMoviesComponent,
+    ProductPresentationComponent,
+    HeaderComponent,
+    FooterComponent
     
   ],
   imports: [
