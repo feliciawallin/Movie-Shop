@@ -8,13 +8,15 @@ import { ProductPresentationComponent } from './product-presentation/product-pre
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ShowMoviesComponent,
     ProductPresentationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+   
     
   ],
   imports: [
