@@ -17,7 +17,7 @@ export class ShowMoviesComponent implements OnInit {
 
   ngOnInit() {
     //getData är en funktion i classen DataService från data.service.ts. här subscribear vi på datan som vi får ifårn funktion getData. All data vi får, sparas i fetchedMovies variabeln
-    this.dataService.getData().subscribe(fetchedMovies => this.movieArray = fetchedMovies)
+    this.dataService.fetchMovies().subscribe(fetchedMovies => this.movieArray = fetchedMovies)
   }
 
 }

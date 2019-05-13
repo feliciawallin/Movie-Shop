@@ -1,5 +1,10 @@
 
+<div class="movieImageContainer">
+<a [routerLink]="['/details', product.id]" routerLinkActive="active">
 <img class="image" src="{{product.imageUrl}}" alt="{{product.name}}"/><br>
+</a>
+</div>
+
 <div>
     {{product.name}}<br>
     <button (click)="addMovieToCart(product)">Add to cart</button>
@@ -7,3 +12,9 @@
     <!-- <a [routerLink]="['/details', korven.id]" routerLinkActive="active">Mer info</a> -->
  
 </div>
+
+
+   
+     
+   
+ 

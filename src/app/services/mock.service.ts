@@ -46,7 +46,7 @@ export class MockService implements IDataService {
 
   constructor() { }
 
-  getData():Observable<IMovie[]>{
+  fetchMovies():Observable<IMovie[]>{
     return of(this.movies);
   }
 }
