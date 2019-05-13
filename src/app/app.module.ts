@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AddProductToCartComponent } from './add-product-to-cart/add-product-to-cart.component';
 
 
 @NgModule({
@@ -17,7 +16,7 @@ import { AddProductToCartComponent } from './add-product-to-cart/add-product-to-
     ProductPresentationComponent,
     HeaderComponent,
     FooterComponent,
-    AddProductToCartComponent,
+   
     
   ],
   imports: [

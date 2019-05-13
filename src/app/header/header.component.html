@@ -9,6 +9,13 @@
           </div> -->
          
         </div>
+        <div class="col-3">
+          <h2>Cart:</h2>
+          <p *ngFor="let singleMovie of cart">
+              Name: {{singleMovie.movie.name}}<br>
+              Amount: {{singleMovie.amount}} <br>
+          </p>
+        </div>
         <!--  gör en liknande sen:
                     <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
                     <a routerLink="/details" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Details</a>
