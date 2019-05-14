@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ShowMoviesComponent } from './show-movies/show-movies.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DetailsComponent } from './details/details.component';
 
 
 describe('AppComponent', () => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        DetailsComponent
       ],
     })
     .compileComponents();

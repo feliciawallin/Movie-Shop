@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductPresentationComponent } from './product-presentation.component';
 import { Component } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ProductPresentationComponent', () => {
   let testHostComponent: TestHostComponent;
@@ -9,7 +10,8 @@ describe('ProductPresentationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductPresentationComponent, TestHostComponent ]
+      declarations: [ ProductPresentationComponent, TestHostComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));

@@ -28,7 +28,7 @@ describe('HeaderComponent', () => {
 
     const service = new MockService();
 
-    service.getData().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
       component.addToCart(movies[0]);
 
       expect(component.cart.length).toEqual(1);
@@ -38,7 +38,7 @@ describe('HeaderComponent', () => {
   it('should add two different movies to cart', () => {
     const service = new MockService();
 
-    service.getData().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
       component.addToCart(movies[0]);
       component.addToCart(movies[1]);
 
@@ -49,7 +49,7 @@ describe('HeaderComponent', () => {
   it('should add two duplicate movies and increase amount to 2', () => {
     const service = new MockService();
 
-    service.getData().subscribe((movies) => {
+    service.fetchMovies().subscribe((movies) => {
       component.addToCart(movies[0]);
       component.addToCart(movies[0]);
       expect(component.cart.length).toEqual(1);
