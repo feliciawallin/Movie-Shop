@@ -45,11 +45,11 @@ export class HeaderComponent implements OnInit {
       console.log(movieToAdd.name);
     }
 
-    //this.saveCartToLocalStorage();
+    this.saveCartToLocalStorage();
   }
 
-//   saveCartToLocalStorage(){
-//     localStorage.setItem("mySavedCart", JSON.stringify(this.cart));
-//   }
-// }
+  saveCartToLocalStorage(){
+    localStorage.setItem("mySavedCart", JSON.stringify(this.cart));
+  }
 }
+
