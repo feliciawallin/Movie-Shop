@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { IMovie } from '../interfaces/IMovie';
 
 @Component({
  selector: 'app-details',
@@ -9,13 +10,13 @@ import { DataService } from '../services/data.service';
 })
 export class DetailsComponent implements OnInit {
 
- singleMovie;
+ singleMovie: IMovie;
 
  constructor(private route: ActivatedRoute, private service: DataService) { }
 
  ngOnInit() {
-   this.route.params.subscribe(myParams => {
-     let id = myParams["id"];
+   this.route.paramMap.subscribe(myParams => {
+     let id = myParams.get("id");
      console.log(id);
      this.service.fetchSingleMovie(id).subscribe((data) => {
        this.singleMovie = data;
