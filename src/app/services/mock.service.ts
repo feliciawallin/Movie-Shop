@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 import { Observable, of } from 'rxjs';
 import { IDataService } from '../interfaces/IDataService';
-import { ICartProduct } from '../interfaces/ICartProduct';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +47,9 @@ export class MockService implements IDataService {
 
   fetchMovies():Observable<IMovie[]>{
     return of(this.movies);
+  }
+
+  fetchSingleMovie(id): Observable<IMovie> {
+    return of(this.movies[0]);
   }
 }

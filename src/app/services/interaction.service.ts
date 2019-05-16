@@ -12,10 +12,10 @@ export class InteractionService {
  cart: ICartProduct[] = [];
 
  movieSource$ = this.movieSource.asObservable();
+
  sendMovie(product: IMovie) {
    this.movieSource.next(product);
  }
-
 
  constructor() { }
 }

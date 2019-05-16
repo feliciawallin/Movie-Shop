@@ -22,9 +22,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.interactionService.movieSource$.subscribe(
       movieInfo => {
-        this.addToCart(movieInfo)
+        this.addToCart(movieInfo);
       }
     )
+
+     this.printCartFromLocalStorage();
   }
 
   addToCart(movieToAdd: IMovie) {
@@ -39,6 +41,7 @@ export class HeaderComponent implements OnInit {
         console.log(movieToAdd.name);
       }
     }
+
     if (addedMovie === false) {
       this.cart.push({ movie: movieToAdd, amount: 1 });
       console.log(movieToAdd.id);
@@ -46,10 +49,21 @@ export class HeaderComponent implements OnInit {
     }
 
     this.saveCartToLocalStorage();
+
   }
 
   saveCartToLocalStorage(){
-    localStorage.setItem("mySavedCart", JSON.stringify(this.cart));
+    localStorage.setItem('myCartLocalStorage', JSON.stringify(this.cart));
+    this.printCartFromLocalStorage();
+  }
+  
+  printCartFromLocalStorage(){
+    let fetchLocalStorageCart = localStorage.getItem('myCartLocalStorage');
+    if(fetchLocalStorageCart === null){
+      this.cart = [];
+    } else{
+      this.cart = JSON.parse(fetchLocalStorageCart);
+    }
+
   }
 }
-

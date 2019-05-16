@@ -14,6 +14,8 @@ describe('HeaderComponent', () => {
   }));
 
   beforeEach(() => {
+    localStorage.clear();
+
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
