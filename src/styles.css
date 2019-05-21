@@ -1,11 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-.carouselImageFrame{
-    height: 90vh;
-    overflow: hidden;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.carouselImage{
- width: 100%;
+body{
+    background-color: black;
+    color: white;
 }

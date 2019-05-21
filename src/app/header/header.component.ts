@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
 
+  showShoppingCart = false;
+
   //Får jag tillgång till det som finns i interactionService-klassen
   constructor(private interactionService: InteractionService) { }
 
@@ -43,7 +45,7 @@ export class HeaderComponent implements OnInit {
     }
 
     if (addedMovie === false) {
-      this.cart.push({ movie: movieToAdd, amount: 1 });
+      this.cart.push({ movie: movieToAdd, amount: 1, totalPrice: movieToAdd.price});
       console.log(movieToAdd.id);
       console.log(movieToAdd.name);
     }
@@ -66,4 +68,21 @@ export class HeaderComponent implements OnInit {
     }
 
   }
-}
+  cartDropDown(){
+    this.showShoppingCart = !this.showShoppingCart;
+    this.countTotalPrice()
+  }
+  countTotalPrice(){
+    for (let i = 0; i < this.cart.length; i++) {
+      let totalSingleMovie = 0
+      let amount = this.cart[i].amount
+      let price =  this.cart[i].movie.price;
+
+        totalSingleMovie += (amount * price);
+
+        console.log( totalSingleMovie);
+        
+      }
+      
+    }
+  }

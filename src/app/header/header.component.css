@@ -1,0 +1,36 @@
+
+header{
+    background-image: url(./../../assets/images/interstellar.jpg);
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background: rgba(230, 230, 230, 0.3);
+
+}
+
+nav .container-fluid {
+    width: 100%;
+}
+
+.shoppingCart i {
+    line-height: 42px;
+}
+.dropDownCart{
+    position: absolute;
+    background: rgba(230, 230, 230, 0.5);
+    padding: 10px;
+    border: 1px solid #aaa;
+}
+
+.logo p {
+    line-height: 42px;
+    margin: 0;
+}

@@ -1,5 +1,10 @@
-.frame{
+/* .frame{
     overflow: hidden;
     border: 1px solid red;
+} */
+.container-fluid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
-
