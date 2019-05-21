@@ -23,11 +23,17 @@ nav .container-fluid {
 .shoppingCart i {
     line-height: 42px;
 }
+
 .dropDownCart{
     position: absolute;
-    background: rgba(230, 230, 230, 0.5);
+    /* background: rgba(230, 230, 230, 0.5); */
+    background-color: black;
     padding: 10px;
     border: 1px solid #aaa;
+}
+
+.add{
+    padding: 0.5em;
 }
 
 .logo p {

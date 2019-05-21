@@ -11,7 +11,7 @@ import { IMovie } from '../interfaces/IMovie';
 export class HeaderComponent implements OnInit {
 
   cart: ICartProduct[] = [];
-
+  totalSum: number;
   showShoppingCart = false;
 
   //Får jag tillgång till det som finns i interactionService-klassen
@@ -25,10 +25,11 @@ export class HeaderComponent implements OnInit {
     this.interactionService.movieSource$.subscribe(
       movieInfo => {
         this.addToCart(movieInfo);
+        this.countTotalPrice()
       }
     )
-
      this.printCartFromLocalStorage();
+     this.countTotalPrice()
   }
 
   addToCart(movieToAdd: IMovie) {
@@ -39,15 +40,12 @@ export class HeaderComponent implements OnInit {
       if (movieToAdd.id === this.cart[i].movie.id) {
         this.cart[i].amount++;
         addedMovie = true;
-        console.log(movieToAdd.id);
-        console.log(movieToAdd.name);
+        this.cart[i].totalPrice += this.cart[i].movie.price;
       }
     }
 
     if (addedMovie === false) {
       this.cart.push({ movie: movieToAdd, amount: 1, totalPrice: movieToAdd.price});
-      console.log(movieToAdd.id);
-      console.log(movieToAdd.name);
     }
 
     this.saveCartToLocalStorage();
@@ -66,23 +64,52 @@ export class HeaderComponent implements OnInit {
     } else{
       this.cart = JSON.parse(fetchLocalStorageCart);
     }
-
+    this.countTotalPrice()
   }
+
   cartDropDown(){
     this.showShoppingCart = !this.showShoppingCart;
     this.countTotalPrice()
   }
+
   countTotalPrice(){
-    for (let i = 0; i < this.cart.length; i++) {
-      let totalSingleMovie = 0
-      let amount = this.cart[i].amount
-      let price =  this.cart[i].movie.price;
 
-        totalSingleMovie += (amount * price);
-
-        console.log( totalSingleMovie);
-        
-      }
-      
+    this.totalSum = 0;
+    console.log('Count total: ', this.cart);
+ 
+    for(let i = 0; i < this.cart.length; i++){
+      console.log('In loop: ', this.cart[i]);
+ 
+      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
+      this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
+ 
     }
+ 
+  }
+  
+  addOneMoreMovie(id: number){
+    for(let i = 0; i < this.cart.length; i++){
+      if(this.cart[i].movie.id === id){
+        this.cart[i].amount++;
+        this.cart[i].totalPrice += this.cart[i].movie.price;
+      }
+    }
+    this.saveCartToLocalStorage();
+  }
+ 
+  subtractMovie(id: number){
+    for(let i = 0; i < this.cart.length; i++){
+      if(this.cart[i].movie.id === id){
+        if(this.cart[i].amount > 0){
+          this.cart[i].amount--;
+          this.cart[i].totalPrice -= this.cart[i].movie.price;
+        }
+ 
+        if(this.cart[i].amount === 0){
+          this.cart.splice(i, 1);
+        }
+      }
+    }
+    this.saveCartToLocalStorage();
+  }
   }
