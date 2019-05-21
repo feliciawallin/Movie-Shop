@@ -14,6 +14,8 @@ export class InteractionService {
  movieSource$ = this.movieSource.asObservable();
 
  sendMovie(product: IMovie) {
+   console.log("in service");
+   
    this.movieSource.next(product);
  }
 

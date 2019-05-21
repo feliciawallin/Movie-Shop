@@ -1,16 +1,35 @@
-.image{
-    height: 200px;
-    width: 100%;
- }
+
 
  @media (min-width: 768px){
-     .image{
+     /* .image{
          height: 250px;
-     }
+     } */
  }
 
  @media (min-width: 992px){
-    .image{
+    /* .image{
         height: 350px;
-    }
+    } */
+}
+
+.image{
+    height: 300px;
+    width: 200px;
+
+}
+
+.movieImageContainer{
+    /* width: 200px; */
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 5px;
+}
+
+.singleMovieContainer {
+    /* width: 33%; */
+  
+    width: 100%;
+    /* float: left; */
+    /* height: 400px; */
 }
