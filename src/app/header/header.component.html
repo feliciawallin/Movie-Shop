@@ -6,10 +6,15 @@
           <div class="col-6 shoppingCart">
             <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
             <div *ngIf ="showShoppingCart" class="dropDownCart">
-            <p *ngFor="let singleMovie of cart">
-                Name: {{singleMovie.movie.name}}<br>
-                Amount: {{singleMovie.amount}} <br>
-            </p>
+            <div *ngFor="let singleMovie of cart">
+                <p>Name: {{singleMovie.movie.name}}</p>
+                     <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
+                       <i class="add fas fa-plus" (click)="addOneMoreMovie(singleMovie.movie.id)"></i>
+                       <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+                     <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+                      </div>
+
+                      <p>{{totalSum}}</p>
           </div>
           </div>
           
