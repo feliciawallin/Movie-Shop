@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row justify-content-between">
           <div class="col-6 shoppingCart">
-            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
+            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i><p>{{totalAmount}}</p>
             <div *ngIf ="showShoppingCart" class="dropDownCart">
             <div *ngFor="let singleMovie of cart">
                 <p>Name: {{singleMovie.movie.name}}</p>
                      <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
-                       <i class="add fas fa-plus" (click)="addOneMoreMovie(singleMovie.movie.id)"></i>
+                       <i class="add fas fa-plus" (click)="addToCart(singleMovie.movie)"></i>
                        <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
                      <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
                       </div>
