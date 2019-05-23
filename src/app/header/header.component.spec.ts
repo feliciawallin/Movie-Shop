@@ -79,17 +79,35 @@ describe('HeaderComponent', () => {
     });
   });
 
-  // it('should count totalprice in cart', () => {
-  //   const service = new MockService();
+  it('should count totalprice in cart', () => {
+    const service = new MockService();
 
-  //   service.fetchMovies().subscribe((movies) => {
-  //     component.addToCart(movies[0]);
-  //     component.addOneMoreMovie(76);
-  //     component.countTotalPrice();
+    service.fetchMovies().subscribe((movies) => {
+
+      expect(component.totalSum).toBe(0);
+
+      component.addToCart(movies[0]);
+      component.addToCart(movies[0]);
+      component.countTotalPrice();
       
-  //     expect(component.cart.length).toEqual(1);
+      expect(component.totalSum).toBe(398);
 
-  //   });
-  // });
-  
+    });
+  });
+
+  it('should count total amount of cart', () => {
+    const service = new MockService();
+
+    service.fetchMovies().subscribe((movies) => {
+
+      expect(component.totalAmount).toBe(0);
+      
+      component.addToCart(movies[0]);
+      component.addOneMoreMovie(76);
+      component.countTotalAmount();
+      
+      expect(component.totalAmount).toBe(2);
+
+    });
+  });
 });

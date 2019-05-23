@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row justify-content-between">
           <div class="col-6 shoppingCart">
-            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
+            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i><p>{{totalAmount}}</p>
             <div *ngIf ="showShoppingCart" class="dropDownCart">
             <div *ngFor="let singleMovie of cart">
                 <p>Name: {{singleMovie.movie.name}}</p>

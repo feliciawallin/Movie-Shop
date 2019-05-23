@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   cart: ICartProduct[] = [];
   totalSum: number;
   showShoppingCart = false;
+  totalAmount: number;
 
   //Får jag tillgång till det som finns i interactionService-klassen
   constructor(private interactionService: InteractionService) { }
@@ -29,7 +30,8 @@ export class HeaderComponent implements OnInit {
       }
     )
      this.printCartFromLocalStorage();
-     this.countTotalPrice()
+     this.countTotalPrice();
+     this.countTotalAmount();
   }
 
   addToCart(movieToAdd: IMovie) {
@@ -51,6 +53,7 @@ export class HeaderComponent implements OnInit {
     }
 
     this.saveCartToLocalStorage();
+    this.countTotalAmount();
 
   }
 
@@ -88,6 +91,21 @@ export class HeaderComponent implements OnInit {
     }
  
   }
+
+  countTotalAmount(){
+
+    this.totalAmount = 0;
+
+    for(let i = 0; i < this.cart.length; i++){
+      // console.log('In loop: ', this.cart[i]);
+ 
+      // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
+      this.totalAmount += this.cart[i].amount;
+ 
+      console.log("total amount is: " + this.totalAmount);
+ 
+    }
+  }
   
   addOneMoreMovie(id: number){
     for(let i = 0; i < this.cart.length; i++){
@@ -97,6 +115,7 @@ export class HeaderComponent implements OnInit {
       }
     }
     this.saveCartToLocalStorage();
+    this.countTotalAmount();
   }
  
   subtractMovie(id: number){
@@ -113,5 +132,6 @@ export class HeaderComponent implements OnInit {
       }
     }
     this.saveCartToLocalStorage();
+    this.countTotalAmount();
   }
   }
