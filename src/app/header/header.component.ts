@@ -107,16 +107,16 @@ export class HeaderComponent implements OnInit {
     }
   }
   
-  addOneMoreMovie(id: number){
-    for(let i = 0; i < this.cart.length; i++){
-      if(this.cart[i].movie.id === id){
-        this.cart[i].amount++;
-        this.cart[i].totalPrice += this.cart[i].movie.price;
-      }
-    }
-    this.saveCartToLocalStorage();
-    this.countTotalAmount();
-  }
+  // addOneMoreMovie(id: number){
+  //   for(let i = 0; i < this.cart.length; i++){
+  //     if(this.cart[i].movie.id === id){
+  //       this.cart[i].amount++;
+  //       this.cart[i].totalPrice += this.cart[i].movie.price;
+  //     }
+  //   }
+  //   this.saveCartToLocalStorage();
+  //   this.countTotalAmount();
+  // }
  
   subtractMovie(id: number){
     for(let i = 0; i < this.cart.length; i++){
