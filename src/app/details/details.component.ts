@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { IMovie } from '../interfaces/IMovie';
 import { InteractionService } from '../services/interaction.service';
@@ -22,9 +22,17 @@ export class DetailsComponent implements OnInit {
   productCategory:[] 
 };
 
- constructor(private route: ActivatedRoute, private service: DataService, private interactionService: InteractionService) { }
+ constructor(private route: ActivatedRoute, private service: DataService, private interactionService: InteractionService, private router: Router) { }
 
  ngOnInit() {
+
+  this.router.events.subscribe((evt) => {
+    if (!(evt instanceof NavigationEnd)) {
+        return;
+    }
+    window.scrollTo(0, 0)
+  });
+
    this.route.paramMap.subscribe(myParams => {
      let id = myParams.get("id");
      console.log(id);
@@ -37,7 +45,7 @@ export class DetailsComponent implements OnInit {
  addMovieToCart(product){
   console.log("clicked in component");
   
-  this.interactionService.sendMovie(product);
+  this.interactionService.sendCart(product);
 }
 
 }

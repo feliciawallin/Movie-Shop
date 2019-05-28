@@ -1,0 +1,12 @@
+<div *ngFor="let singleMovie of cart">
+    <p>Name: {{singleMovie.movie.name}}</p>
+    <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
+      <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
+      <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+    <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+  </div>
+
+  <p>{{totalSum}}</p>
+
+
+

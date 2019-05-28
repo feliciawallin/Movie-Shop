@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
+import { ICartProduct } from '../interfaces/ICartProduct';
+import { Router, NavigationEnd } from '@angular/router';
 import { IMovie } from '../interfaces/IMovie';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
 
   cart: ICartProduct[] = [];
   totalSum: number;
   showShoppingCart = false;
   totalAmount: number;
 
-  //Får jag tillgång till det som finns i interactionService-klassen
-  constructor(private interactionService: InteractionService) { }
 
+   //Får jag tillgång till det som finns i interactionService-klassen
+  constructor(private router: Router, private interactionService: InteractionService) { }
+
+  
   ngOnInit() {
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+    });
+
 
     this.interactionService.getCartFromLocalStorage();
     this.cart = this.interactionService.getCart();
