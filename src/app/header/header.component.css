@@ -1,12 +1,4 @@
 
-header{
-    background-image: url(./../../assets/images/interstellar.jpg);
-    height: 100vh;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    width: 100vw;
-}
 
 nav{
     position: fixed;
