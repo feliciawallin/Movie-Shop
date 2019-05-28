@@ -1,35 +1,36 @@
-
 <header>
-    <nav>
-      <div class="container-fluid">
-        <div class="row justify-content-between">
-          <div class="col-6 shoppingCart">
-            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i><p>{{totalAmount}}</p>
-            <div *ngIf ="showShoppingCart" class="dropDownCart">
+  <nav>
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+        <div class="col-6 shoppingCart">
+          <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
+          <p>{{totalAmount}}</p>
+          <div *ngIf="showShoppingCart" class="dropDownCart">
             <div *ngFor="let singleMovie of cart">
-                <p>Name: {{singleMovie.movie.name}}</p>
-                     <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
-                       <i class="add fas fa-plus" (click)="addToCart(singleMovie.movie)"></i>
-                       <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
-                     <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
-                      </div>
+              <p>Name: {{singleMovie.movie.name}}</p>
+              <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
+                <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
+                <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+              <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+            </div>
 
-                      <p>{{totalSum}}</p>
-          </div>
-          </div>
-          
-          <div class="col-1 logo">
-            <p>LOGO</p>
+            <p>{{totalSum}}</p>
+            <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">Gå vidare</button>
           </div>
         </div>
+
+        <div class="col-1 logo">
+          <p>LOGO</p>
         </div>
-    
-      
-    </nav>
-      
-        <!--  gör en liknande sen:
+      </div>
+    </div>
+
+
+  </nav>
+
+  <!--  gör en liknande sen:
                     <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
                     <a routerLink="/details" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Details</a>
                     <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a> -->
-      
-    </header>
+
+</header>

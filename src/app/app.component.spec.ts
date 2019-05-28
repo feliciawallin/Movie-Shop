@@ -5,6 +5,7 @@ import { ShowMoviesComponent } from './show-movies/show-movies.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 describe('AppComponent', () => {
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        DetailsComponent
+        DetailsComponent,
+        CheckoutComponent
       ],
     })
     .compileComponents();
@@ -27,18 +29,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'MovieShop'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('MovieShop');
-  });
-
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Welcome to MovieShop!');
-  // });
+  }); 
 });
