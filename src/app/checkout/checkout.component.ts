@@ -3,6 +3,11 @@ import { InteractionService } from '../services/interaction.service';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { Router, NavigationEnd } from '@angular/router';
 import { IMovie } from '../interfaces/IMovie';
+import { FormBuilder, Validators, FormArray} from '@angular/forms';
+import { IOrder } from '../interfaces/IOrder';
+import * as moment from 'moment';
+import { DataService } from '../services/data.service';
+
 
 @Component({
   selector: 'app-checkout',
@@ -11,14 +16,20 @@ import { IMovie } from '../interfaces/IMovie';
 })
 export class CheckoutComponent implements OnInit {
 
+  timeNow = moment().format('lll');
   cart: ICartProduct[] = [];
   totalSum: number;
   showShoppingCart = false;
   totalAmount: number;
+  orderForm = this.fb.group({
+    
+    emailAdress: ['', Validators.required],
+    paymentOptions: ['', Validators.required]
 
+  });
 
    //Får jag tillgång till det som finns i interactionService-klassen
-  constructor(private router: Router, private interactionService: InteractionService) { }
+  constructor(private router: Router, private interactionService: InteractionService, private fb: FormBuilder, private dataService: DataService) { }
 
   
   ngOnInit() {
@@ -43,7 +54,6 @@ export class CheckoutComponent implements OnInit {
         
       }
     )
-   
   }
 
   cartDropDown(){
@@ -109,6 +119,37 @@ export class CheckoutComponent implements OnInit {
  
     }
   }
- 
-  
+
+  postOrder(){
+
+    let orderRowsContent = [];
+
+    for (let i = 0; i < this.cart.length; i++) {
+     
+      let amount = this.cart[i].amount;
+      let id = this.cart[i].movie.id;
+
+      orderRowsContent.push({productId: id, amount: amount});
+    
+    }
+    console.log('variabel orderrows ', orderRowsContent);
+    console.log('bajs ' + this.timeNow);
+    
+
+    let order: IOrder = {
+      id: 0,
+      companyId: 15,
+      created: this.timeNow, //timegrejen
+      createdBy: this.orderForm.get('emailAdress').value,
+      paymentMethod: this.orderForm.get('paymentOptions').value,
+      totalPrice: this.totalSum,
+      status: 0,
+      orderRows: orderRowsContent
+
+    }
+
+    this.dataService.postOrder(order).subscribe()
+
+   
   }
+}

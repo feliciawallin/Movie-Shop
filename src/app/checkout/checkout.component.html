@@ -10,3 +10,20 @@
 
 
 
+<section>
+  <form [formGroup]="orderForm">
+    <label for="email">Email</label><br>
+    <input name="email" type="text" formControlName="emailAdress"><br>
+    <label for="paymentOptions">Payment Options</label><br>
+    <input name="paymentOptions" value="swish"  checked="checked" type="radio" formControlName="paymentOptions"><br>
+    <input name="paymentOptions" value="paypal" type="radio" formControlName="paymentOptions"><br>
+    
+    <button type="submit" (click)="postOrder()" [disabled]="!orderForm.valid">Place Order</button><br>
+
+  </form>
+</section>
+
+{{orderForm.status}}
+
+{{orderForm.value.emailAdress}}
+{{orderForm.value.paymentMethod}}

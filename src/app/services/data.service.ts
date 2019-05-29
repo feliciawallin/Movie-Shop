@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IMovie } from '../interfaces/IMovie';
 import { IDataService } from '../interfaces/IDataService';
 
+
 @Injectable({
  providedIn: 'root'
 })
@@ -18,6 +19,11 @@ export class DataService implements IDataService{
 
  fetchSingleMovie(id): Observable<IMovie>{
    return this.httpClient.get<IMovie>("https://medieinstitutet-wie-products.azurewebsites.net/api/products/" + id);
+ }
+
+ //varför kan vi inte ha IOrder istället för ANy???????? Måste jag ha companyId i url:en?
+ postOrder(order): Observable<any>{
+   return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
  }
 
 }
