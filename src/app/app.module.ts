@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -21,14 +21,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FooterComponent,
     DetailsComponent,
     CheckoutComponent,
-  
-   
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
