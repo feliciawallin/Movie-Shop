@@ -78,7 +78,5 @@ export class MockService implements IDataService {
   postOrder(order): Observable<IOrder> {
     return of(this.order[0]);
   }
-  // postOrder(order): Observable<any>{
-  //   return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=15', order);
-  // }
+
 }
