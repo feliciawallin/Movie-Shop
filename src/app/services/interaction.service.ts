@@ -12,6 +12,8 @@ export class InteractionService {
  cart: ICartProduct[] = [];
 
  movieSource$ = this.movieSource.asObservable();
+ 
+ constructor() { }
 
  //skickar med hela min cart
  sendCart(product: IMovie) {
@@ -72,5 +74,13 @@ getCartFromLocalStorage(){
    return this.cart;
  }
 
- constructor() { }
+clearCartLocalstorage(){
+   this.cart.splice(0, this.cart.length);
+
+   this.movieSource.next(this.cart);
+
+   this.saveCartToLocalStorage();
+
+ }
+
 }
