@@ -23,7 +23,7 @@ export class CheckoutComponent implements OnInit {
   totalAmount: number;
   orderForm = this.fb.group({
     
-    emailAdress: ['', Validators.required],
+    emailAdress: ['', [Validators.required, Validators.email]],
     paymentOptions: ['', Validators.required]
 
   });

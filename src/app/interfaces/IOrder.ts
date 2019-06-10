@@ -11,5 +11,5 @@ export interface IOrder{
 
  export interface IOrderRow{
     productId: number;
-    Amount: number;
+    amount: number;
  }
