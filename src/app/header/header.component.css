@@ -18,10 +18,9 @@ nav .container-fluid {
 
 .dropDownCart{
     position: absolute;
-    /* background: rgba(230, 230, 230, 0.5); */
-    background-color: black;
+    background: rgba(230, 230, 230, 0.3);
+    /* background-color: black; */
     padding: 10px;
-    border: 1px solid #aaa;
 }
 
 .add{
