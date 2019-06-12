@@ -1,56 +1,54 @@
-<div *ngFor="let singleMovie of cart">
-  <p>Name: {{singleMovie.movie.name}}</p>
-  <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
-    <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
-    <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
-  <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
-</div>
+<div class="container-fluid">
 
-<p>{{totalSum}}</p>
+  <main class="containerCheckout">
 
-
-
-<section>
-  <form [formGroup]="orderForm" (ngSubmit)="postOrder()" #formDir="ngForm">
-    <label for="email">Email</label><br>
-    <input name="email" type="text" formControlName="emailAdress"><br>
-
-    <div
-      *ngIf="orderForm.get('emailAdress').invalid && (formDir.submitted || orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
-      <div *ngIf="orderForm.get('emailAdress').errors.required">
-        <p class="errorMessage">Du måste fylla i mejladress.</p>
-      </div>
-      <div *ngIf="orderForm.get('emailAdress').errors.email">
-        <p class="errorMessage">Du måste skriva in en mejladress.</p>
-      </div>
+    <div class="row" *ngFor="let singleMovie of cart">
+      <p class="col-5"><strong>{{singleMovie.movie.name}}</strong></p>
+      <p class="col-3">Qty: <i class="add fas fa-plus"
+          (click)="addSingleMovieToCart(singleMovie.movie)"></i>{{singleMovie.amount}}
+        <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+      <p class="col-3">{{singleMovie.totalPrice}} SEK </p>
     </div>
 
-    <label for="paymentOptions">Payment Options</label><br>
-
-    <select id="paymentOptions" formControlName="paymentOptions">
-      <option selected="selected" value="">Betalningsmetod:</option>
-      <option value="card">Card</option>
-      <option value="paypal">PayPal</option>
-    </select>
-
-    <div *ngIf="orderForm.get('paymentOptions').invalid && formDir.submitted">
-      <div *ngIf="orderForm.get('paymentOptions').errors.required">
-        <p class="errorMessage">Du måste välja betalningsmetod</p>
-      </div>
-    </div><br>
-
-  
-      <button class="finishOrderBtn" type="submit">Slutför ditt köp</button>
-    
+    <p>Total price: <strong>{{totalSum}} SEK </strong></p>
 
 
-    <!-- <input name="paymentOptions" value="swish"  checked="checked" type="radio" formControlName="paymentOptions"><br>
-    <input name="paymentOptions" value="paypal" type="radio" formControlName="paymentOptions"><br> -->
+    <section>
+      <form [formGroup]="orderForm" (ngSubmit)="postOrder()" #formDir="ngForm">
+        <label for="email">Email adress</label><br>
+        <input name="email" type="text" formControlName="emailAdress"><br>
 
-  </form>
-</section>
+        <div
+          *ngIf="orderForm.get('emailAdress').invalid && (formDir.submitted || orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
+          <div *ngIf="orderForm.get('emailAdress').errors.required">
+            <p class="errorMessage">Du måste fylla i mejladress.</p>
+          </div>
+          <div *ngIf="orderForm.get('emailAdress').errors.email">
+            <p class="errorMessage">Du måste skriva in en mejladress.</p>
+          </div>
+        </div>
 
-{{orderForm.status}}
+        <label for="paymentOptions">Payment Options</label><br>
 
-{{orderForm.value.emailAdress}}
-{{orderForm.value.paymentMethod}}
+        <select id="paymentOptions" formControlName="paymentOptions">
+          <option selected="selected" value="">Paymentmethod</option>
+          <option value="card">Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <div *ngIf="orderForm.get('paymentOptions').invalid && formDir.submitted">
+          <div *ngIf="orderForm.get('paymentOptions').errors.required">
+            <p class="errorMessage">Choose paymentmethod</p>
+          </div>
+        </div><br>
+
+
+        <button class="finishOrderBtn" type="submit">Place order</button>
+
+      </form>
+    </section>
+
+    {{orderForm.value.emailAdress}}
+    {{orderForm.value.paymentMethod}}
+  </main>
+</div>

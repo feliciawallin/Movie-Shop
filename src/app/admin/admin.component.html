@@ -1,11 +1,13 @@
-<div class="orderContainer">
-  <p>hejhej</p>
-    <div *ngFor="let order of orders">
+<div class="container-fluid">
+  <main class="containerAdmin">
+    <div class="row orders" *ngFor="let order of orders">
       <p>Id: {{ order.id }}, CompanyId: {{ order.companyId}} Created by: {{ order.createdBy }}, Created: {{ order.created }}, Total price:
         {{ order.totalPrice}} </p>
       <p *ngFor="let orderRow of order.orderRows">
         Product ID: {{ orderRow.productId }}
       </p>
+   
   
     </div>
-  </div>
+</main>
+</div>
