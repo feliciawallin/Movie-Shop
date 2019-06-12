@@ -1,6 +1,4 @@
-<div class="container-fluid">
-
-  <main class="containerCheckout">
+<main class="containerCheckout">
 
     <div class="row" *ngFor="let singleMovie of cart">
       <p class="col-5"><strong>{{singleMovie.movie.name}}</strong></p>
@@ -48,7 +46,5 @@
       </form>
     </section>
 
-    {{orderForm.value.emailAdress}}
-    {{orderForm.value.paymentMethod}}
+   
   </main>
-</div>

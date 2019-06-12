@@ -11,9 +11,22 @@
 
 .heroImage{
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(./../../assets/images/bluecurtains.jpg);
-    height: 100vh;
+    height: 46vh;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
+}
+
+@media (min-width: 768px){
+  .heroImage{
+    height: 45vh;
+  }
+  
+}
+
+@media (min-width: 992px){
+    .heroImage{
+        height: 46vh;
+    }
 }
