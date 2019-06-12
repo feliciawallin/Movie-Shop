@@ -1,15 +1,11 @@
 
 
  @media (min-width: 768px){
-     /* .image{
-         height: 250px;
-     } */
+   
  }
 
  @media (min-width: 992px){
-    /* .image{
-        height: 350px;
-    } */
+ 
 }
 
 .image{
@@ -27,9 +23,21 @@
 }
 
 .singleMovieContainer {
-    /* width: 33%; */
-  
     width: 100%;
-    /* float: left; */
-    /* height: 400px; */
+    text-align: center;
+}
+
+.singleMovieContainer p{
+    margin-bottom: 2px;
+}
+
+.addToCartButton{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: gray;
+    color: white;
+    margin-bottom: 1rem;
+
 }
