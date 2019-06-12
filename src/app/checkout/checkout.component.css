@@ -2,4 +2,42 @@
     padding-top: 10rem;
     text-align: center;
     height: 85vh;
+    margin: 0 2rem;
 }
+
+.orderRows{
+    border-bottom: 1px solid gray;
+}
+
+.finishOrderBtn{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(56, 56, 56, 0.753);
+    color: white;
+    margin-bottom: 1rem;
+}
+.add{
+    font-size: 0.9rem;
+    padding: 0 0.4rem;
+}
+
+.subtract{
+    font-size: 0.9rem;
+    padding-left: 0.4rem;
+}
+
+
+@media (min-width: 768px){
+    .containerCheckout{
+        margin: 0 5rem;
+    }
+    
+  }
+  
+  @media (min-width: 992px){
+    .containerCheckout{
+        margin: 0 10rem;
+    }
+  }

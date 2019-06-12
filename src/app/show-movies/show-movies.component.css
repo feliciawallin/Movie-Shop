@@ -10,23 +10,55 @@
 }
 
 .heroImage{
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(./../../assets/images/bluecurtains.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(./../../assets/images/bluecurtains.jpg);
     height: 46vh;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
+    text-align: center;
+}
+
+.textOnHeroImage{
+    padding-top: 10rem;
+}
+.textOnHeroImage h1{
+    font-family: 'Codystar', cursive;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px black;
+
+}
+.textOnHeroImage p{
+    text-shadow: 1px 1px black;
+    font-size: 0.9rem;
+
 }
 
 @media (min-width: 768px){
   .heroImage{
     height: 45vh;
   }
+
+  .textOnHeroImage h1{
+    font-size: 3rem;
+}
+
+.textOnHeroImage p{
+    font-size: 1rem;
+}
   
 }
 
 @media (min-width: 992px){
     .heroImage{
         height: 46vh;
+    }
+
+    .textOnHeroImage h1{
+        font-size: 4rem;
+    }
+
+    .textOnHeroImage p{
+        font-size: 1.2rem;
     }
 }

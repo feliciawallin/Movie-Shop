@@ -19,7 +19,6 @@ nav .container-fluid {
 .dropDownCart{
     position: absolute;
     background: rgba(0, 0, 0, 0.6);
-    /* background-color: black; */
     padding: 10px;
 }
 
@@ -30,4 +29,7 @@ nav .container-fluid {
 .logo p {
     line-height: 42px;
     margin: 0;
+    font-size: 2rem;
+    text-decoration:underline;
+
 }

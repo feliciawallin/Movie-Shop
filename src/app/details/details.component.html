@@ -1,9 +1,8 @@
-
-<div>
+<div class="containerDetails">
+    <img class="imageDetails" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}" /><br>
+    <div>
         <h2>{{singleMovie.name}}</h2>
-        <img class="image" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}"/><br>
         <p>{{singleMovie.price}} SEK</p>
-        <button (click)="addMovieToCart(singleMovie)">Add to cart</button>
-        <!-- vill göra en liknande som nedan för att komma till en ny url med bara info om den filmen vi klickat på -->
-        <!-- <a [routerLink]="['/details', korven.id]" routerLinkActive="active">Mer info</a> -->
+        <button class="addToCartButton" (click)="addMovieToCart(singleMovie)">Add to cart</button>
     </div>
+</div>
