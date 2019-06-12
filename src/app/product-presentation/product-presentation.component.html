@@ -1,4 +1,5 @@
-<div class="singleMovieContainer">
+<div class="container-fluid"> 
+<main class="singleMovieContainer">
 
     <div class="movieImageContainer">
         <a [routerLink]="['/details', product.id]">
@@ -6,8 +7,10 @@
         </a>
     </div>
 
-    <div>
-        <p>{{product.price}} SEK</p>
-        <button (click)="addMovieToCart(product)">Add to cart</button>
+    <div class="row">
+        <p class="col-12"> {{product.price}} SEK</p>
+        <button class="col-10 addToCartButton" (click)="addMovieToCart(product)">Add to cart</button>
     </div>
+</main>
 </div>
+

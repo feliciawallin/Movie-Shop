@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
 
 
 describe('AppComponent', () => {
@@ -22,7 +23,8 @@ describe('AppComponent', () => {
         HeaderComponent,
         FooterComponent,
         DetailsComponent,
-        CheckoutComponent
+        CheckoutComponent,
+        ErrorComponent
       ],
     })
     .compileComponents();
