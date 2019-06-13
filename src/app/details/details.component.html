@@ -1,8 +1,13 @@
-<div class="containerDetails">
-    <img class="imageDetails" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}" /><br>
-    <div>
+
+
+    <div class="row containerDetails">
+    <div class="col-3">
+    <img class="imageDetails" src="{{singleMovie.imageUrl}}" alt="{{singleMovie.name}}">
+</div>
+    <div class="col-3">
         <h2>{{singleMovie.name}}</h2>
+        <p class="singleMovieDescription">{{singleMovie.description}}</p>
         <p>{{singleMovie.price}} SEK</p>
-        <button class="addToCartButton" (click)="addMovieToCart(singleMovie)">Add to cart</button>
+        <button class="addToCartButton" (click)="addMovieToCart(singleMovie)"><p>ADD TO BAG</p></button>
     </div>
 </div>

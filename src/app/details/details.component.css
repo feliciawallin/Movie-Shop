@@ -1,12 +1,11 @@
 .containerDetails{
-padding-top: 10rem;
-  text-align: center;
+padding-top: 8rem;
+justify-content: center;
 }
 
 .imageDetails{
-    height: 300px;
-    width: 200px;
-    align-self: center;
+    height: 400px;
+    width: 300px;
 }
 .addToCartButton{
     align-self: center;

@@ -5,21 +5,35 @@ nav{
     display: flex;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
-
+    height: 75px;
 }
 
 nav .container-fluid {
     width: 100%;
 }
 
+.shoppingCart{
+    text-align: right;
+    font-size: 1.4rem;
+}
+
 .shoppingCart i {
-    line-height: 42px;
+    line-height: 75px;
+    padding-left: 20px;
+}
+
+.shoppingCart p {
+    display: inline;
+    padding: 0 10px 0 5px;
+    font-size: 1rem;
 }
 
 .dropDownCart{
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
     padding: 10px;
+    right: 0;
+    top: 75px;
 }
 
 .add{
@@ -27,9 +41,8 @@ nav .container-fluid {
 }
 
 .logo p {
-    line-height: 42px;
+    line-height: 75px;
     margin: 0;
-    font-size: 2rem;
-    text-decoration:underline;
-
+    font-size: 2.5rem;
+    padding-left: 10px;
 }

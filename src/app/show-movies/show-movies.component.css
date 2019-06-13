@@ -31,7 +31,6 @@
 .textOnHeroImage p{
     text-shadow: 1px 1px black;
     font-size: 0.9rem;
-
 }
 
 @media (min-width: 768px){
