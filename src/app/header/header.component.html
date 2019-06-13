@@ -7,25 +7,31 @@
               <p>Pelìcula</p>
             </div>
 
-            <div *ngIf="showShoppingCart" class="dropDownCart">
-              <div *ngFor="let singleMovie of cart">
-                <p>Name: {{singleMovie.movie.name}}</p>
-                <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
-                  <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
-                  <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
-                <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+            <div class="col-6 shoppingCart">
+                <div class="cartContainer">
+                <a routerLink='/admin'><i class="fas fa-user"></i></a>
+                <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
+                <p>{{totalAmount}}</p>
+                </div>
+              </div>
+
+            
+              <div class="cart hideCart">
+
+                <div *ngFor="let singleMovie of cart">
+                  <p>Name: {{singleMovie.movie.name}}</p>
+                  <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
+                    <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
+                    <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+                  <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+
+                  <p>{{totalSum}}</p>
+                </div>
+                <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">Gå vidare</button>
               </div>
   
-              <p>{{totalSum}}</p>
-              <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">Gå vidare</button>
-            </div>
-          
-            <div class="col-6 shoppingCart">
-          <a routerLink='/admin'><i class="fas fa-user"></i></a>
-          <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
-          <p>{{totalAmount}}</p>
-        </div>
-
+              
+            
     
       </div>
     </div>
