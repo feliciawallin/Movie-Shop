@@ -1,8 +1,8 @@
 <main class="containerCheckout">
   <h2>Your shopping bag</h2>
   <div class="row orderRows" *ngFor="let singleMovie of cart">
-    <p class="col-6">{{singleMovie.movie.name}}</p>
-    <p class="col-3">Qty: <i class="add fas fa-plus"
+    <p class="col-5 col-md-6">{{singleMovie.movie.name}}</p>
+    <p class="col-4 col-md-3">Qty: <i class="add fas fa-plus"
         (click)="addSingleMovieToCart(singleMovie.movie)"></i>{{singleMovie.amount}}
       <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
     <p class="col-3">{{singleMovie.totalPrice}} SEK </p>

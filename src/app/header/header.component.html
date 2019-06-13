@@ -18,16 +18,17 @@
             
               <div class="cart hideCart">
 
-                <div *ngFor="let singleMovie of cart">
-                  <p>Name: {{singleMovie.movie.name}}</p>
-                  <p><strong>Amount: {{singleMovie.amount}}</strong>, {{singleMovie.movie.price}}:-/each
+                <div class="dropDownInfo" *ngFor="let singleMovie of cart">
+                  <p>{{singleMovie.movie.name}}</p>
+                    <p>Qty: 
                     <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
+                    {{singleMovie.amount}}
                     <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
-                  <p> <strong>Total: {{singleMovie.totalPrice}}:-</strong></p>
+                  <p> <strong>{{singleMovie.totalPrice}} SEK</strong></p>
 
-                  <p>{{totalSum}}</p>
                 </div>
-                <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">Gå vidare</button>
+                <p><strong>Total price: {{totalSum}} SEK</strong></p>
+                <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">GO TO CHECKOUT</button>
               </div>
   
               

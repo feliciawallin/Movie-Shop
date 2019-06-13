@@ -1,7 +1,6 @@
 .containerCheckout{
     padding-top: 9rem;
     text-align: center;
-    height: 85vh;
     margin: 0 1rem;
 }
 
@@ -11,6 +10,10 @@
 
 .containerCheckout h3{
     font-size: 1.3rem;
+}
+
+.containerCheckout p{
+    font-size: 0.9rem;
 }
 
 .totalPriceCheckout{
@@ -69,6 +72,10 @@
     }
     
   }
+
+  .containerCheckout p{
+    font-size: 1rem;
+}
   
   @media (min-width: 992px){
     .containerCheckout{

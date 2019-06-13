@@ -31,14 +31,30 @@ nav .container-fluid {
 
 .cart{
     position: absolute;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1));
     padding: 10px;
     right: 0;
     top: 75px;
+    min-width: 250px;
+    padding: 1rem;
+    overflow: scroll;
+    max-height: 500px;
 }
 
-.add{
-    padding: 0.5em;
+.dropDownInfo{
+    border-bottom: 1px solid gray;
+}
+
+.buttonCheckout{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(56, 56, 56, 0.753);
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    display:block;
 }
 
 .logo p {

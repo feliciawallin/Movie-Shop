@@ -10,3 +10,14 @@ body{
     background-position: center;
     background-size: cover;
 }
+
+.addToCartButton{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(56, 56, 56, 0.753);
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}

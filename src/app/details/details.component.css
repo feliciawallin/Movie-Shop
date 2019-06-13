@@ -11,14 +11,9 @@ height: 60vh;
     width: 170px;
     
 }
+
 .addToCartButton{
-    align-self: center;
-    margin: 0 auto;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: rgba(56, 56, 56, 0.753);
-    color: white;
-    margin-bottom: 1rem;
+    padding: 0 1rem;
 }
 
 .singleMovieDescription{
