@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { InteractionService } from '../services/interaction.service';
 import { IMovie } from '../interfaces/IMovie';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -32,12 +33,30 @@ export class HeaderComponent implements OnInit {
         
       }
     )
-   
+
+    $(document).on('click', function (e) {
+      if ($(e.target).closest(".cartContainer").length === 0) {
+        console.log('outside cart');
+        
+        $(".cart").removeClass("showCart");
+        $(".cart").addClass("hideCart");
+      }
+    });
   }
 
   cartDropDown(){
-    this.showShoppingCart = !this.showShoppingCart;
-  
+      console.log('cartToggle');
+      console.log($(".cart").hasClass('hideCart'));
+      
+      if($(".cart").hasClass('hideCart')) {
+        $(".cart").removeClass("hideCart");
+        $(".cart").addClass("showCart");
+
+      }
+      else {
+        $(".cart").addClass("hideCart");
+        $(".cart").removeClass("showCart");
+      }
   }
 
   addSingleMovieToCart(singleMovie: IMovie) {

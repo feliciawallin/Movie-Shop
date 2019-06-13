@@ -1,8 +1,10 @@
-
-
 .containerFooter{
     height: 10rem;
     padding-top: 2.5rem;
     text-align: center;
     color: lightgray;
+    bottom: 0; 
+    width: 100%;
+    position: fixed;
+   
 }
