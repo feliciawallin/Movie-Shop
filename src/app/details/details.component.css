@@ -1,11 +1,9 @@
 .containerDetails{
-    position: absolute;
 padding-top: 8rem;
 justify-content: center;
 text-align: center;
-z-index: -1;
 margin-bottom: 10rem;
-height: 85vh;
+height: 60vh;
 }
 
 .imageDetails{
