@@ -1,6 +1,7 @@
 .containerAdmin{
     padding-top: 10rem;
     text-align: center;
+    height: 85vh;
 }
 .orders{
     border-bottom: 1px gray solid;

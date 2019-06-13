@@ -1,0 +1,18 @@
+.containerDetails{
+padding-top: 8rem;
+justify-content: center;
+}
+
+.imageDetails{
+    height: 400px;
+    width: 300px;
+}
+.addToCartButton{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(56, 56, 56, 0.753);
+    color: white;
+    margin-bottom: 1rem;
+}

@@ -1,6 +1,12 @@
 
-<div class="heroImage"></div>
-<h1>All Movies</h1>
+<div class="heroImage">
+
+  <div class="row textOnHeroImage">
+  <h1 class="col-12 welcomeText">Welcome to Pelìcula</h1>
+  <p class="col-12">The shop full of the greatest movies you can imagine!
+  </p>
+</div>
+</div>
 <div class="container-fluid">
     
   <app-product-presentation *ngFor='let movie of movieArray' [product]='movie'></app-product-presentation>

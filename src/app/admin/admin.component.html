@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <main class="containerAdmin">
     <div class="row orders" *ngFor="let order of orders">
       <p>Id: {{ order.id }}, CompanyId: {{ order.companyId}} Created by: {{ order.createdBy }}, Created: {{ order.created }}, Total price:
@@ -10,4 +10,23 @@
   
     </div>
 </main>
-</div>
+</div> -->
+
+<div class="orders" *ngFor="let orders of extendedOrders">
+
+    <div *ngFor="let name of orders.movieNames">
+    <p>Film: {{ name }}</p>
+    </div>
+    
+    <div *ngFor="let orderRow of orders.order.orderRows">
+    <p>Produkt ID: {{ orderRow.productId }}</p>
+    <p> Antal: {{ orderRow.amount }}</p>
+    </div>
+    
+    <p>ID: {{ orders.order.id }}</p>
+    <p>Företags ID: {{ orders.order.companyId }}</p>
+    <p>Skapad av: {{ orders.order.createdBy }}</p>
+    <p>Skapad: {{ orders.order.created }}</p>
+    <p>Totalpris: {{ orders.order.totalPrice }}:- </p>
+    
+    </div>

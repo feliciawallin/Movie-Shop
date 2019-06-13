@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+p{
+    font-family: 'Nixie One', cursive;
+}
 body{
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(/assets/images/bluecurtains.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(/assets/images/bluecurtains.jpg);
     color: white;
     background-attachment: fixed;
     background-position: center;

@@ -1,0 +1,36 @@
+.containerError{
+    height: 85vh;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.containerError i{
+   top: 20%;
+   font-size: 7rem;
+   color: rgb(83, 4, 4);
+   text-shadow: 1px 1px black;
+}
+
+
+@media (min-width: 768px){
+    .containerError{
+       font-size: 4rem; 
+    }
+
+    .containerError i{
+        top: 20%;
+        font-size: 8rem;
+    }
+}
+
+@media (min-width: 992px){
+    .containerError{
+        font-size: 5rem; 
+     }
+
+     .containerError i{
+        top: 20%;
+        font-size: 10rem;
+    }
+}
