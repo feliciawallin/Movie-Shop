@@ -1,8 +1,40 @@
 .containerAdmin{
-    padding-top: 10rem;
-    text-align: center;
-    height: 85vh;
+        padding-top: 6rem;
+        text-align: center;
+        margin: 0 1rem; 
 }
+
+.containerAdmin h2{
+    text-decoration: underline;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.containerAdmin h3{
+    font-size: 1.5rem;
+    color: gray;
+}
+
 .orders{
+    padding: 1rem;
     border-bottom: 1px gray solid;
+    justify-content: space-between;  
+}
+
+
+@media (min-width: 768px){
+
+    .containerAdmin h2{
+        font-size: 2rem;
+    }    
+  }
+
+  .containerAdmin p{
+    font-size: 1rem;
+}
+  
+  @media (min-width: 992px){
+    .containerAdmin{
+        margin: 0 8rem;
+    }
 }

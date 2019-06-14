@@ -17,7 +17,6 @@ export class InteractionService {
 
  //skickar med hela min cart
  sendCart(product: IMovie) {
-   console.log("in service");
    let addedMovie = false;
 
    // movieToAdd.id = id på klickade film

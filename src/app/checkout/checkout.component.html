@@ -14,9 +14,9 @@
     <h3>Fill in your shipping address to complete your order </h3>
     <form [formGroup]="orderForm" (ngSubmit)="postOrder()" #formDir="ngForm">
       <label for="email">
-        <p class="emailInput">Email adress</p>
+        <p class="emailInputText">Email adress</p>
       </label><br>
-      <input name="email" type="text" placeholder="exempel@exempel.com" formControlName="emailAdress"><br>
+      <input class="EmailInputField" name="email" type="text" placeholder="exempel@exempel.com" formControlName="emailAdress"><br>
 
       <div
         *ngIf="orderForm.get('emailAdress').invalid && (formDir.submitted || orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
@@ -46,7 +46,7 @@
 
 
       <button class="finishOrderBtn" type="submit">
-        <p>Place order</p>
+        <p>PLACE ORDER</p>
       </button>
 
     </form>

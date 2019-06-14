@@ -24,8 +24,13 @@
     border-bottom: 1px solid gray;
 }
 
-.emailInput{
+.emailInputText{
     margin:0;
+}
+
+.EmailInputField{
+    width: 13rem;
+    border-radius: 0.5rem;
 }
 
 .choosePayment{
@@ -42,6 +47,13 @@
     margin: 1rem 0 0 0;
     width: 150px;
 }
+
+.finishOrderBtn:hover{
+    background-color: rgba(43, 43, 43, 0.753);
+color: rgb(189, 189, 189);
+}
+
+
 
 .finishOrderBtn p{
     padding: 0.5rem 0 0.5rem 0;

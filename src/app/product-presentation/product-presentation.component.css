@@ -4,6 +4,11 @@
     width: 200px;
 }
 
+.image:hover{
+    height: 305px;
+    width: 205px;
+}
+
 .movieImageContainer{
     max-width: 100%;
     overflow: hidden;
@@ -14,19 +19,9 @@
 .singleMovieContainer {
     width: 100%;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 .singleMovieContainer p{
     margin-bottom: 2px;
-}
-
-.addToCartButton{
-    align-self: center;
-    margin: 0 auto;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: rgba(56, 56, 56, 0.753);
-    color: white;
-    margin-bottom: 1rem;
-
 }
