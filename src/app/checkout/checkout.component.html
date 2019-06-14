@@ -16,7 +16,8 @@
       <label for="email">
         <p class="emailInputText">Email adress</p>
       </label><br>
-      <input class="EmailInputField" name="email" type="text" placeholder="exempel@exempel.com" formControlName="emailAdress"><br>
+      <input class="EmailInputField" name="email" type="text" placeholder="exempel@exempel.com"
+        formControlName="emailAdress"><br>
 
       <div
         *ngIf="orderForm.get('emailAdress').invalid && (formDir.submitted || orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">

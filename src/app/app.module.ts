@@ -9,9 +9,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { ErrorComponent } from './error/error.component';
+import { ConfirmedComponent } from './confirmed/confirmed.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ErrorComponent } from './error/error.component';
     CheckoutComponent,
     AdminComponent,
     ErrorComponent,
+    ConfirmedComponent,
   ],
   imports: [
     BrowserModule,

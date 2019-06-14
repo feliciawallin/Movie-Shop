@@ -12,11 +12,11 @@ describe('CheckoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckoutComponent ],
+      declarations: [CheckoutComponent],
       imports: [RouterTestingModule, ReactiveFormsModule, HttpClientModule, FormsModule],
-      providers: [ FormBuilder ]
+      providers: [FormBuilder]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -31,15 +31,15 @@ describe('CheckoutComponent', () => {
 
 
   it('clear cart after submit', () => {
-  
-     const service = new MockService();
-  
-     service.fetchMovies().subscribe((movies) => {
-  
-       component.addSingleMovieToCart(movies[0]);
-       expect(component.cart.length).toEqual(1);
-       component.clearCart();
-       expect(component.cart.length).toEqual(0);
-     });
-   });
+
+    const service = new MockService();
+
+    service.fetchMovies().subscribe((movies) => {
+
+      component.addSingleMovieToCart(movies[0]);
+      expect(component.cart.length).toEqual(1);
+      component.clearCart();
+      expect(component.cart.length).toEqual(0);
+    });
+  });
 });
