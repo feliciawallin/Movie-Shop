@@ -1,0 +1,57 @@
+<main class="containerCheckout">
+  <h2>Your shopping bag</h2>
+  <div class="row orderRows" *ngFor="let singleMovie of cart">
+    <p class="col-5 col-md-6">{{singleMovie.movie.name}}</p>
+    <p class="col-4 col-md-3">Qty: <i class="add fas fa-plus"
+        (click)="addSingleMovieToCart(singleMovie.movie)"></i>{{singleMovie.amount}}
+      <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+    <p class="col-3">{{singleMovie.totalPrice}} SEK </p>
+  </div>
+
+  <p class="totalPriceCheckout">Total price: <strong>{{totalSum}} SEK </strong></p>
+
+  <section>
+    <h3>Fill in your shipping address to complete your order </h3>
+    <form [formGroup]="orderForm" (ngSubmit)="postOrder()" #formDir="ngForm">
+      <label for="email">
+        <p class="emailInputText">Email adress</p>
+      </label><br>
+      <input class="EmailInputField" name="email" type="text" placeholder="exempel@exempel.com"
+        formControlName="emailAdress"><br>
+
+      <div
+        *ngIf="orderForm.get('emailAdress').invalid && (formDir.submitted || orderForm.get('emailAdress').dirty || orderForm.get('emailAdress').touched)">
+        <div *ngIf="orderForm.get('emailAdress').errors.required">
+          <p class="errorMessage">Fill in a correct email adress</p>
+        </div>
+        <div *ngIf="orderForm.get('emailAdress').errors.email">
+          <p class="errorMessage">Fill in a correct email adress</p>
+        </div>
+      </div>
+
+      <label for="paymentOptions">
+        <P class="choosePayment">Payment Options</P>
+      </label><br>
+
+      <select id="paymentOptions" formControlName="paymentOptions">
+        <option selected="selected" value="">Choose paymentmethod</option>
+        <option value="card">Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <div *ngIf="orderForm.get('paymentOptions').invalid && formDir.submitted">
+        <div *ngIf="orderForm.get('paymentOptions').errors.required">
+          <p class="errorMessage">Choose paymentmethod</p>
+        </div>
+      </div><br>
+
+
+      <button class="finishOrderBtn" type="submit">
+        <p>PLACE ORDER</p>
+      </button>
+
+    </form>
+  </section>
+
+
+</main>

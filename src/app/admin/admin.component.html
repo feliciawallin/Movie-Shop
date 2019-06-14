@@ -1,0 +1,21 @@
+<div class="containerAdmin">
+  <h2>Orders</h2>
+  <div class="orders" *ngFor="let orders of extendedOrders">
+
+    <div class="row">
+      <p class="col-12 col-md-2 col-lg-2"><strong>Order ID:</strong> {{ orders.order.id }}</p>
+      <p class="col-12 col-md-4 col-lg-4"><strong>Created by:</strong> {{ orders.order.createdBy }}</p>
+      <p class="col-12 col-md-3 col-lg-4"><strong>Time:</strong> {{ orders.order.created }}</p>
+      <p class="col-12 col-md-3 col-lg-2"><strong>Tot:</strong> {{ orders.order.totalPrice }}:-</p>
+    </div>
+    <h3>Movies:</h3>
+    <div class="row">
+      <div class="col-12" *ngFor="let name of orders.movieNames">
+        <p><strong>{{ name }}</strong></p>
+      </div>
+      <div class="col-12" *ngFor="let orderRow of orders.order.orderRows">
+        <p><strong>Qty:</strong> {{ orderRow.amount }}</p>
+      </div>
+    </div>
+  </div>
+</div>

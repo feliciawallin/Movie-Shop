@@ -1,0 +1,37 @@
+<header>
+  <nav>
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+
+        <div class="col-6 logo">
+          <a routerLink="">
+            <h1>Pelìcula</h1>
+          </a>
+        </div>
+        
+        <div class="col-6 shoppingCart">
+          <div class="cartContainer">
+            <a routerLink='/admin'><i class="fas fa-user"></i></a>
+            <i (click)="cartDropDown()" class="fas fa-shopping-cart"></i>
+            <p>{{totalAmount}}</p>
+          </div>
+        </div>
+
+        <div class="cart hideCart">
+
+          <div class="dropDownInfo" *ngFor="let singleMovie of cart">
+            <p>{{singleMovie.movie.name}}</p>
+            <p>Qty:
+              <i class="add fas fa-plus" (click)="addSingleMovieToCart(singleMovie.movie)"></i>
+              {{singleMovie.amount}}
+              <i class="subtract fas fa-minus" (click)="subtractMovie(singleMovie.movie.id)"></i></p>
+            <p> <strong>{{singleMovie.totalPrice}} SEK</strong></p>
+
+          </div>
+          <p><strong>Total price: {{totalSum}} SEK</strong></p>
+          <button type="buttonSendToCheckout" routerLink='/submit' class="buttonCheckout">GO TO CHECKOUT</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

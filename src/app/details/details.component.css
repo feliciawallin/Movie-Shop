@@ -1,0 +1,42 @@
+.containerDetails{
+padding-top: 8rem;
+justify-content: center;
+text-align: center;
+margin-bottom: 10rem;
+height: 60vh;
+}
+
+.imageDetails{
+    height: 250px;
+    width: 170px;
+    
+}
+
+.addToCartButton{
+    padding: 0 1rem;
+}
+
+.singleMovieDescription{
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 768px){
+  
+    .imageDetails{
+        height: 400px;
+        width: 300px;
+        
+    }
+    
+  }
+  
+  @media (min-width: 992px){
+
+    .containerDetails{
+        width: 95%;
+        }
+    
+      }

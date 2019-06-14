@@ -1,0 +1,27 @@
+
+.image{
+    height: 300px;
+    width: 200px;
+}
+
+.image:hover{
+    height: 305px;
+    width: 205px;
+}
+
+.movieImageContainer{
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.singleMovieContainer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.singleMovieContainer p{
+    margin-bottom: 2px;
+}

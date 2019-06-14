@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Nixie One', cursive; 
+}
+body{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(/assets/images/bluecurtains.jpg);
+    color: white;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.addToCartButton{
+    align-self: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(56, 56, 56, 0.753);
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}
+
+.addToCartButton:hover{
+background-color: rgba(43, 43, 43, 0.753);
+color: rgb(189, 189, 189);
+}
