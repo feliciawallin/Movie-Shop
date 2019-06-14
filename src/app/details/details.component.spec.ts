@@ -16,14 +16,14 @@ describe('DetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailsComponent, 
-       ],
-      imports: [ RouterTestingModule, HttpClientModule],
-      providers: [{provide: ActivatedRoute, useValue: stub},
-      {provide: DataService, useClass: MockService}]
+      declarations: [DetailsComponent,
+      ],
+      imports: [RouterTestingModule, HttpClientModule],
+      providers: [{ provide: ActivatedRoute, useValue: stub },
+      { provide: DataService, useClass: MockService }]
     })
 
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

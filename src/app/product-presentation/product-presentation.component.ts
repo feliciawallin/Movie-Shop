@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 import { InteractionService } from '../services/interaction.service';
 
@@ -9,13 +9,13 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class ProductPresentationComponent implements OnInit {
   @Input() product: IMovie;
-  
+
   constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
   }
 
-  addMovieToCart(product){
+  addMovieToCart(product) {
     this.interactionService.sendCart(product);
   }
 }

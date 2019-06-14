@@ -61,15 +61,15 @@ describe('HeaderComponent', () => {
   it('should add one more movie to cart', () => {
 
     const service = new MockService();
- 
+
     service.fetchMovies().subscribe((movies) => {
- 
+
       component.addSingleMovieToCart(movies[0]);
       component.addSingleMovieToCart(movies[1]);
- 
+
       expect(component.cart.length).toEqual(2);
     });
- 
+
   });
 
   it('should add even one more movie to cart', () => {
@@ -79,7 +79,7 @@ describe('HeaderComponent', () => {
       component.addSingleMovieToCart(movies[0]);
       component.addSingleMovieToCart(movies[1]);
       component.addSingleMovieToCart(movies[0]);
-      
+
       expect(component.cart.length).toEqual(2);
       expect(component.cart[0].amount).toBe(2);
 
@@ -106,7 +106,7 @@ describe('HeaderComponent', () => {
       component.addSingleMovieToCart(movies[0]);
       component.addSingleMovieToCart(movies[0]);
       component.countTotalPrice();
-      
+
       expect(component.totalSum).toBe(398);
 
     });
@@ -118,11 +118,11 @@ describe('HeaderComponent', () => {
     service.fetchMovies().subscribe((movies) => {
 
       expect(component.totalAmount).toBe(0);
-      
+
       component.addSingleMovieToCart(movies[0]);
       component.addSingleMovieToCart(movies[0]);
       component.countTotalAmount();
-      
+
       expect(component.totalAmount).toBe(2);
 
     });

@@ -55,10 +55,9 @@ export class CheckoutComponent implements OnInit {
 
   cartDropDown() {
     this.showShoppingCart = !this.showShoppingCart;
-
   }
 
-  //plussikonen går till sendCart funktionen i interactionsservice och uppdaterar carten
+  //plussikonen går till sendCartfunktionen i interactionsservice och uppdaterar carten
   addSingleMovieToCart(singleMovie: IMovie) {
     this.interactionService.sendCart(singleMovie);
 
@@ -66,7 +65,6 @@ export class CheckoutComponent implements OnInit {
 
     this.countTotalAmount();
     this.countTotalPrice();
-
   }
 
   //Minusikonen går till deletefunktionen i interactionsservice och uppdaterar carten
@@ -75,7 +73,6 @@ export class CheckoutComponent implements OnInit {
 
     this.countTotalAmount();
     this.countTotalPrice();
-
   }
 
   print(cart) {
@@ -83,7 +80,6 @@ export class CheckoutComponent implements OnInit {
 
     this.countTotalAmount();
     this.countTotalPrice();
-
   }
 
   countTotalPrice() {
@@ -93,7 +89,6 @@ export class CheckoutComponent implements OnInit {
 
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
-
     }
   }
 
@@ -106,6 +101,7 @@ export class CheckoutComponent implements OnInit {
       this.totalAmount += this.cart[i].amount;
     }
   }
+
   // Här postar jag en order till databasen, man hämtar id från formuläret och egenskaper.
   postOrder() {
     if (this.orderForm.valid) {
@@ -129,12 +125,11 @@ export class CheckoutComponent implements OnInit {
         totalPrice: this.totalSum,
         status: 0,
         orderRows: orderRowsContent
-
       }
 
       this.dataService.postOrder(order).subscribe();
       this.clearCart();
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/confirmed']);
     }
   }
 

@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit {
 
   extendedOrders: IExtendedOrder[] = [];
 
-  constructor(private service: DataService) { 
+  constructor(private service: DataService) {
   }
 
   ngOnInit() {
@@ -20,20 +20,20 @@ export class AdminComponent implements OnInit {
     this.service.fetchOrderData().subscribe((orderData) => {
 
       for (let i = 0; i < orderData.length; i++) {
-      this.extendedOrders.push({ order: orderData[i], movieNames: []});
-      
-      let orderRows = orderData[i].orderRows;
-      
-      for (let j = 0; j < orderRows.length; j++) {
-      let productId = orderRows[j].productId;
-      
-      this.service.fetchSingleMovie(productId).subscribe((data) => {
-      this.extendedOrders[i].movieNames.push(data.name);
-      
-      });
+        this.extendedOrders.push({ order: orderData[i], movieNames: [] });
+
+        let orderRows = orderData[i].orderRows;
+
+        for (let j = 0; j < orderRows.length; j++) {
+          let productId = orderRows[j].productId;
+
+          this.service.fetchSingleMovie(productId).subscribe((data) => {
+            this.extendedOrders[i].movieNames.push(data.name);
+
+          });
+        }
       }
-      }
-      });
+    });
   }
 
 }

@@ -11,12 +11,12 @@ describe('ShowMoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowMoviesComponent, ProductPresentationComponent ],
+      declarations: [ShowMoviesComponent, ProductPresentationComponent],
       imports: [RouterTestingModule]
     })
-     // SPC har providern DataService från spc.ts, här overridear vi den och använder MockdataService när vi gör våra tester.
-    .overrideComponent(ShowMoviesComponent, { set: { providers: [{ provide: DataService, useClass: MockService }]}})
-    .compileComponents();
+      // SPC har providern DataService från spc.ts, här overridear vi den och använder MockdataService när vi gör våra tester.
+      .overrideComponent(ShowMoviesComponent, { set: { providers: [{ provide: DataService, useClass: MockService }] } })
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -30,7 +30,7 @@ describe('ShowMoviesComponent', () => {
   });
 
   it(`should contain three movies`, () => {
-    
+
     expect(component.movieArray.length).toEqual(3);
 
   });

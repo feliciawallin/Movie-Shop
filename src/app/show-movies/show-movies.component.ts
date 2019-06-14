@@ -9,9 +9,9 @@ import { DataService } from '../services/data.service';
 })
 export class ShowMoviesComponent implements OnInit {
 
-  movieArray:IMovie[] = [];
+  movieArray: IMovie[] = [];
 
-  constructor(private dataService: DataService) { 
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {

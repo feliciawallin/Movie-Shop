@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
 
     $(document).on('click', function (e) {
       if ($(e.target).closest(".cartContainer").length === 0) {
-        
+
         $(".cart").removeClass("showCart");
         $(".cart").addClass("hideCart");
       }
@@ -42,61 +42,61 @@ export class HeaderComponent implements OnInit {
   }
 
   //Togglar min cart
-  cartDropDown(){
-      
-      if($(".cart").hasClass('hideCart')) {
-        $(".cart").removeClass("hideCart");
-        $(".cart").addClass("showCart");
+  cartDropDown() {
 
-      }
-      else {
-        $(".cart").addClass("hideCart");
-        $(".cart").removeClass("showCart");
-      }
+    if ($(".cart").hasClass('hideCart')) {
+      $(".cart").removeClass("hideCart");
+      $(".cart").addClass("showCart");
+
+    }
+    else {
+      $(".cart").addClass("hideCart");
+      $(".cart").removeClass("showCart");
+    }
   }
 
   addSingleMovieToCart(singleMovie: IMovie) {
     this.interactionService.sendCart(singleMovie);
- 
+
     this.cart = this.interactionService.cart;
- 
+
     this.countTotalAmount();
     this.countTotalPrice();
- 
+
   }
 
   subtractMovie(id) {
     this.interactionService.delete(id);
- 
+
     this.countTotalAmount();
     this.countTotalPrice();
- 
+
   }
 
-  print(cart) { 
+  print(cart) {
     this.cart = cart;
- 
+
     this.countTotalAmount();
     this.countTotalPrice();
- 
+
   }
 
-  countTotalPrice(){
+  countTotalPrice() {
     this.totalSum = 0;
- 
-    for(let i = 0; i < this.cart.length; i++){
+
+    for (let i = 0; i < this.cart.length; i++) {
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
- 
+
     }
   }
 
-  countTotalAmount(){
+  countTotalAmount() {
     this.totalAmount = 0;
 
-    for(let i = 0; i < this.cart.length; i++){
+    for (let i = 0; i < this.cart.length; i++) {
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
     }
-  } 
   }
+}
