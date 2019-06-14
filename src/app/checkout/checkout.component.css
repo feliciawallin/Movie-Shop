@@ -1,12 +1,40 @@
 .containerCheckout{
-    padding-top: 10rem;
+    padding-top: 9rem;
     text-align: center;
-    height: 85vh;
-    margin: 0 2rem;
+    margin: 0 1rem;
+}
+
+.containerCheckout h2{
+    font-size: 1.5rem;
+}
+
+.containerCheckout h3{
+    font-size: 1.3rem;
+}
+
+.containerCheckout p{
+    font-size: 0.9rem;
+}
+
+.totalPriceCheckout{
+    padding-top: 0.5rem;
 }
 
 .orderRows{
     border-bottom: 1px solid gray;
+}
+
+.emailInputText{
+    margin:0;
+}
+
+.EmailInputField{
+    width: 13rem;
+    border-radius: 0.5rem;
+}
+
+.choosePayment{
+    margin:0;
 }
 
 .finishOrderBtn{
@@ -16,7 +44,20 @@
     border-radius: 0.5rem;
     background-color: rgba(56, 56, 56, 0.753);
     color: white;
-    margin-bottom: 1rem;
+    margin: 1rem 0 0 0;
+    width: 150px;
+}
+
+.finishOrderBtn:hover{
+    background-color: rgba(43, 43, 43, 0.753);
+color: rgb(189, 189, 189);
+}
+
+
+
+.finishOrderBtn p{
+    padding: 0.5rem 0 0.5rem 0;
+    margin: 0;
 }
 .add{
     font-size: 0.9rem;
@@ -33,8 +74,20 @@
     .containerCheckout{
         margin: 0 5rem;
     }
+
+    .containerCheckout h2{
+        font-size: 2rem;
+    }
+
+    .containerCheckout h3{
+        font-size: 2rem;
+    }
     
   }
+
+  .containerCheckout p{
+    font-size: 1rem;
+}
   
   @media (min-width: 992px){
     .containerCheckout{

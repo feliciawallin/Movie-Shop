@@ -33,18 +33,17 @@ export class DetailsComponent implements OnInit {
     window.scrollTo(0, 0)
   });
 
+  //När du clickar på bilden så skickas de ett id
    this.route.paramMap.subscribe(myParams => {
      let id = myParams.get("id");
-     console.log(id);
      this.service.fetchSingleMovie(id).subscribe((data) => {
        this.singleMovie = data;
      });
    });
  }
 
+ //Ropar på funktionen senCart som ligger i interactionservice
  addMovieToCart(product){
-  console.log("clicked in component");
-  
   this.interactionService.sendCart(product);
 }
 

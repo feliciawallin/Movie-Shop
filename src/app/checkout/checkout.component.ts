@@ -3,7 +3,7 @@ import { InteractionService } from '../services/interaction.service';
 import { ICartProduct } from '../interfaces/ICartProduct';
 import { Router, NavigationEnd } from '@angular/router';
 import { IMovie } from '../interfaces/IMovie';
-import { FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { IOrder } from '../interfaces/IOrder';
 import * as moment from 'moment';
 import { DataService } from '../services/data.service';
@@ -41,7 +41,6 @@ export class CheckoutComponent implements OnInit {
       window.scrollTo(0, 0)
     });
 
-
     this.interactionService.getCartFromLocalStorage();
     this.cart = this.interactionService.getCart();
     this.countTotalPrice();
@@ -50,8 +49,6 @@ export class CheckoutComponent implements OnInit {
     this.interactionService.movieSource$.subscribe(
       cartInfo => {
         this.print(cartInfo);
-
-
       }
     )
   }
@@ -61,8 +58,8 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  //plussikonen går till sendCart funktionen i interactionsservice och uppdaterar carten
   addSingleMovieToCart(singleMovie: IMovie) {
-
     this.interactionService.sendCart(singleMovie);
 
     this.cart = this.interactionService.cart;
@@ -72,8 +69,8 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  //Minusikonen går till deletefunktionen i interactionsservice och uppdaterar carten
   subtractMovie(id) {
-
     this.interactionService.delete(id);
 
     this.countTotalAmount();
@@ -82,9 +79,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   print(cart) {
-
-    console.log('movie: ' + cart);
-
     this.cart = cart;
 
     this.countTotalAmount();
@@ -93,12 +87,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   countTotalPrice() {
-
     this.totalSum = 0;
-    console.log('Count total: ', this.cart);
 
     for (let i = 0; i < this.cart.length; i++) {
-      console.log('In loop: ', this.cart[i]);
 
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
@@ -110,20 +101,14 @@ export class CheckoutComponent implements OnInit {
     this.totalAmount = 0;
 
     for (let i = 0; i < this.cart.length; i++) {
-      // console.log('In loop: ', this.cart[i]);
 
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
-
-      console.log("total amount is: " + this.totalAmount);
-
     }
   }
-
+  // Här postar jag en order till databasen, man hämtar id från formuläret och egenskaper.
   postOrder() {
-
     if (this.orderForm.valid) {
-
 
       let orderRowsContent = [];
 
@@ -133,11 +118,7 @@ export class CheckoutComponent implements OnInit {
         let id = this.cart[i].movie.id;
 
         orderRowsContent.push({ productId: id, amount: amount });
-
       }
-      console.log('variabel orderrows ', orderRowsContent);
-      console.log('bajs ' + this.timeNow);
-
 
       let order: IOrder = {
         id: 0,
@@ -156,6 +137,8 @@ export class CheckoutComponent implements OnInit {
       this.router.navigate(['/admin']);
     }
   }
+
+  //Ropar på funktionen clearCart-funktionen som ligger i interactionservice
   clearCart() {
     this.interactionService.clearCartLocalstorage();
   }

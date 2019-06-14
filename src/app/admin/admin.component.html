@@ -1,32 +1,22 @@
-<!-- <div class="container-fluid">
-  <main class="containerAdmin">
-    <div class="row orders" *ngFor="let order of orders">
-      <p>Id: {{ order.id }}, CompanyId: {{ order.companyId}} Created by: {{ order.createdBy }}, Created: {{ order.created }}, Total price:
-        {{ order.totalPrice}} </p>
-      <p *ngFor="let orderRow of order.orderRows">
-        Product ID: {{ orderRow.productId }}
-      </p>
-   
-  
-    </div>
-</main>
-</div> -->
 
-<div class="orders" *ngFor="let orders of extendedOrders">
+<div class="containerAdmin">
+  <h2>Orders</h2>
+  <div class="orders" *ngFor="let orders of extendedOrders">
 
-    <div *ngFor="let name of orders.movieNames">
-    <p>Film: {{ name }}</p>
+    <div class="row">
+      <p class="col-12 col-md-2 col-lg-2"><strong>Order ID:</strong> {{ orders.order.id }}</p>
+      <p class="col-12 col-md-4 col-lg-4"><strong>Created by:</strong> {{ orders.order.createdBy }}</p>
+      <p class="col-12 col-md-3 col-lg-4"><strong>Time:</strong> {{ orders.order.created }}</p>
+      <p class="col-12 col-md-3 col-lg-2"><strong>Tot:</strong> {{ orders.order.totalPrice }}:-</p>
     </div>
-    
-    <div *ngFor="let orderRow of orders.order.orderRows">
-    <p>Produkt ID: {{ orderRow.productId }}</p>
-    <p> Antal: {{ orderRow.amount }}</p>
+    <h3>Movies:</h3>
+    <div class="row">
+      <div class="col-12" *ngFor="let name of orders.movieNames">
+        <p><strong>{{ name }}</strong></p>
+      </div>
+      <div class="col-12" *ngFor="let orderRow of orders.order.orderRows">
+        <p><strong>Qty:</strong> {{ orderRow.amount }}</p>
+      </div>
     </div>
-    
-    <p>ID: {{ orders.order.id }}</p>
-    <p>Företags ID: {{ orders.order.companyId }}</p>
-    <p>Skapad av: {{ orders.order.createdBy }}</p>
-    <p>Skapad: {{ orders.order.created }}</p>
-    <p>Totalpris: {{ orders.order.totalPrice }}:- </p>
-    
-    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
-import { HttpClient } from '@angular/common/http';
 import { DataService } from '../services/data.service';
 
 @Component({

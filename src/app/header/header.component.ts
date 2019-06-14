@@ -29,14 +29,11 @@ export class HeaderComponent implements OnInit {
     this.interactionService.movieSource$.subscribe(
       cartInfo => {
         this.print(cartInfo);
-  
-        
       }
     )
 
     $(document).on('click', function (e) {
       if ($(e.target).closest(".cartContainer").length === 0) {
-        console.log('outside cart');
         
         $(".cart").removeClass("showCart");
         $(".cart").addClass("hideCart");
@@ -44,9 +41,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  //Togglar min cart
   cartDropDown(){
-      console.log('cartToggle');
-      console.log($(".cart").hasClass('hideCart'));
       
       if($(".cart").hasClass('hideCart')) {
         $(".cart").removeClass("hideCart");
@@ -60,7 +56,6 @@ export class HeaderComponent implements OnInit {
   }
 
   addSingleMovieToCart(singleMovie: IMovie) {
-
     this.interactionService.sendCart(singleMovie);
  
     this.cart = this.interactionService.cart;
@@ -71,7 +66,6 @@ export class HeaderComponent implements OnInit {
   }
 
   subtractMovie(id) {
-
     this.interactionService.delete(id);
  
     this.countTotalAmount();
@@ -79,10 +73,7 @@ export class HeaderComponent implements OnInit {
  
   }
 
-  print(cart) {
-
-    console.log('movie: ' + cart);
- 
+  print(cart) { 
     this.cart = cart;
  
     this.countTotalAmount();
@@ -91,13 +82,9 @@ export class HeaderComponent implements OnInit {
   }
 
   countTotalPrice(){
-
     this.totalSum = 0;
-    console.log('Count total: ', this.cart);
  
     for(let i = 0; i < this.cart.length; i++){
-      console.log('In loop: ', this.cart[i]);
- 
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalSum += this.cart[i].movie.price * this.cart[i].amount;
  
@@ -108,15 +95,8 @@ export class HeaderComponent implements OnInit {
     this.totalAmount = 0;
 
     for(let i = 0; i < this.cart.length; i++){
-      // console.log('In loop: ', this.cart[i]);
- 
       // this.totalSum blir värdet av föregående värde och beräkning på höger sida om likamed tecknet
       this.totalAmount += this.cart[i].amount;
- 
-      console.log("total amount is: " + this.totalAmount);
- 
     }
-  }
- 
-  
+  } 
   }

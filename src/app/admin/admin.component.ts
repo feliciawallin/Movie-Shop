@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
 
+    //Subsribear på orden och namnen på filmerna som ligger i databasen, och pushar in i egenskapen extendOrders
     this.service.fetchOrderData().subscribe((orderData) => {
-
 
       for (let i = 0; i < orderData.length; i++) {
       this.extendedOrders.push({ order: orderData[i], movieNames: []});
@@ -27,10 +27,7 @@ export class AdminComponent implements OnInit {
       for (let j = 0; j < orderRows.length; j++) {
       let productId = orderRows[j].productId;
       
-      //console.log('product id from orderrows: ' + productId);
-      
       this.service.fetchSingleMovie(productId).subscribe((data) => {
-      //console.log(data);
       this.extendedOrders[i].movieNames.push(data.name);
       
       });

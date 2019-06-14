@@ -1,11 +1,9 @@
 .containerDetails{
-    position: absolute;
 padding-top: 8rem;
 justify-content: center;
 text-align: center;
-z-index: -1;
 margin-bottom: 10rem;
-height: 85vh;
+height: 60vh;
 }
 
 .imageDetails{
@@ -13,14 +11,9 @@ height: 85vh;
     width: 170px;
     
 }
+
 .addToCartButton{
-    align-self: center;
-    margin: 0 auto;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: rgba(56, 56, 56, 0.753);
-    color: white;
-    margin-bottom: 1rem;
+    padding: 0 1rem;
 }
 
 .singleMovieDescription{
